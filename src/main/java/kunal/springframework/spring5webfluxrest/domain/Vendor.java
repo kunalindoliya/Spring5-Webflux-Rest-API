@@ -1,6 +1,8 @@
 package kunal.springframework.spring5webfluxrest.domain;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,7 +11,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Data
 @Document
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Vendor {
@@ -18,4 +19,8 @@ public class Vendor {
     private String firstName;
     private String lastName;
 
+    public Vendor(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }
